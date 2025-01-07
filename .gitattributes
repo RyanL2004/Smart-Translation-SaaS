@@ -1,0 +1,14 @@
+# Mark all Python files as vendored
+*.py linguist-vendored=true
+requirements.txt linguist-vendored=true
+pyrightconfig.json linguist-vendored=true
+
+
+*.js linguist-vendored=false
+*.jsx linguist-vendored=false
+*.ts linguist-vendored=false
+*.tsx linguist-vendored=false
+
+# Mark node_modules as vendored
+node_modules/* linguist-vendored=true
+my-express-app/node_modules/* linguist-vendored=true
