@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
@@ -26,39 +25,31 @@ const MainContent = () => (
   </>
 );
 
- const App = () => {
- return (
+const App = () => (
   <div className="App">
     <OktaProvider>
       <AuthContextProvider>
         <Routes>
-          {/* Your routes go here */}
-          <Route
-            path="/"
-            element={(
-              <div>
-                <MainContent />
-              </div>
-            )}
-          />
-          <Route path="/login" element={(<div className="gradient__bg"><Signin /></div>)} />
-          <Route path="/signup" element={(<div className="gradient__bg"><Signup /></div>)} />
-          <Route path="/translateapp" element={(<div className="gradient__bg"><Translateapp /></div>)} />
-          <Route path="/gpt" element={(<div><Gpt /></div>)} />
-
+          <Route path="/" element={<MainContent />} />
+          <Route path="/login" element={<div className="gradient-bg"><Signin /></div>} />
+          <Route path="/signup" element={<div className="gradient-bg"><Signup /></div>} />
+          <Route path="/translateapp" element={<div className="gradient-bg"><Translateapp /></div>} />
+          <Route path="/gpt" element={<div className="gradient-bg"><Gpt /></div>} />
           <Route
             path="/account"
-            element={(<div className="gradient__bg">
-              <ProtectedRoute>
-                <Account />
-              </ProtectedRoute>
-            </div>)}
+            element={
+              <div className="gradient-bg">
+                <ProtectedRoute>
+                  <Account />
+                </ProtectedRoute>
+              </div>
+            }
           />
         </Routes>
       </AuthContextProvider>
     </OktaProvider>
   </div>
 );
-};
 
 export default App;
+
