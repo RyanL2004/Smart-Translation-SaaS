@@ -1,94 +1,75 @@
-/* translation.css */
+:root {
+  --font-family: 'Arial, sans-serif';
+  --primary-gradient: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  --primary-color: #ff4820;
+  --secondary-color: #052d56;
+  --text-color: #fff;
+  --hover-gradient: linear-gradient(to right, rgba(0, 30, 63, 1), rgba(3, 9, 18, 1));
+  --background-gradient: linear-gradient(135deg, #052d56, #09192e, #ae67fa);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+}
 
 .translation-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--background-gradient);
+  background-size: cover;
+  color: var(--text-color);
+  text-align: center;
   padding: 20px;
 }
 
-.translation-button-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  
-  margin-right: 5px;    
-  margin-left: 100px;
+.translation-header {
+  margin-bottom: 20px;
 }
-.translation-button-container h1{
-  font-family:var(--font-family);
+
+.gradient-text {
   font-weight: 800;
-  font-size: 62px;
-  line-height: 75px;
-  letter-spacing: -0.04em;
-  color: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
-  background-image: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
-  -webkit-background-clip: text; /* For WebKit (Safari, Chrome) */
+  font-size: 2.5rem;
+  line-height: 1.2;
   color: transparent;
-  display: inline-block;
+  background-image: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
-.translation-button-container input{
-  flex: 2;
-  width: 100%;
-  min-height: 50px;
-  font-family: var(--font-family);
-  font-size: 20px;
-  line-height:27px;
-  
-  background: #052D56;
-  border:2px solid var(--color_footer);
-  padding: 0 1rem;
-  outline: none;
-  color:#fff;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+.translation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-.translation-button-container button{
-  flex: 0.6;
-  width: 100%;
-  min-height: 50px;
-  font-family: var(--font-family);
+.translate-button {
+  background: var(--primary-color);
+  color: var(--text-color);
+  font-size: 1.2rem;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 27px;
-  background: #FF4820;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  color: #fff;
-  cursor: pointer;
-  outline:none;
-  padding: 0 1rem;
+  padding: 12px 24px;
   border: none;
-
-  
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
-.translation-button-container input {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.translate-button:hover {
+  background: var(--hover-gradient);
 }
 
+@media (max-width: 768px) {
+  .gradient-text {
+      font-size: 1.8rem;
+  }
 
-.translation-button-container button:hover {
-  background: linear-gradient(to right, rgba(0, 30, 63, 1), rgba(3, 9, 18, 1));
-}
-
-.translated-text-container {
-  margin-top: 1rem;
-}
-
-.translated-text-container p {
-  font-size: 16px;
-  color: #333;
-}
-
-.translated-text-container strong {
-  font-weight: bold;
+  .translate-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
 }

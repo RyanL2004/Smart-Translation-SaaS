@@ -154,7 +154,6 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Chat Box</h1>
         <ChatBox />
       </div>
     </div>
