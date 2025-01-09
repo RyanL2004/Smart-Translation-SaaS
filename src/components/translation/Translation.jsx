@@ -10,10 +10,6 @@ openai.apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 const Translation = () => {
     const navigate = useNavigate();
 
-    const navigateToTranslateApp = () => {
-      navigate('translateapp')
-    };
-
     const navigateToGpt = () => {
       navigate('gpt')
     };
@@ -24,24 +20,10 @@ const Translation = () => {
   
 
   return (
-    <div className="translation-container">
-
-      <div className="translation-button-container">
-        <h1 className="gradient__text">Talk, Translate, Listen: Your Multilingual Companion with GPT-3 Magic!</h1>
-
-      
-              <Link to="/translateapp">
-                <button type="button" onClick={navigateToTranslateApp}>
-                  Start Translating using AI!
-                </button>
-              </Link>
-      </div>
-      </div>,
-      
       <div className="translation-container">
 
       <div className="translation-button-container">
-        <h1 className="gradient__text">Talk, Translate, Listen: Your Multilingual Companion with GPT-3 Magic!</h1>
+        <h1 className="gradient__text">Talk, Translate, Listen: Your Multilingual Companion with GPT-4 Magic!</h1>
 
       
               <Link to="/gpt">
