@@ -8,6 +8,8 @@
 - **Demo**: [Deployment Link](https://main.d2kq90havoolfb.amplifyapp.com/)
 - **Video Presentation**: [Vimeo](https://vimeo.com/1004595680?share=copy)
 - **Research Paper**: [ResearchPaper.pdf](https://github.com/user-attachments/files/16824493/ResearchPaper.pdf)
+- **Users Traffic Chart (Regular Activity Since deployment with an Average of 300 requests a week)**: ![image](https://github.com/user-attachments/assets/48a92513-2a97-495c-883e-df1f84e207e4)
+
 - **Project Poster**: <br /> ![Poster Screenshot](https://github.com/user-attachments/assets/ce3cff32-9343-4575-9db9-72642546cfe0)
 
 ---
