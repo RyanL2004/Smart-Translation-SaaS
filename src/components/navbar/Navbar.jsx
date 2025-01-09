@@ -1,4 +1,3 @@
-// Import Link from react-router-dom
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
@@ -7,11 +6,11 @@ import './navbar.css';
 
 const Menu = () => (
   <>
-    <p><a href="#home">Home</a></p>
-    <p><a href="#wgpt3">What is GPT?</a></p>
-    <p><a href="#possibility">Open AI</a></p>
-    <p><a href="#features">Case Studies</a></p>
-    <p><a href="#blog">Library</a></p>
+    <p><Link to="#home">Home</Link></p>
+    <p><Link to="#wgpt3">What is GPT?</Link></p>
+    <p><Link to="#possibility">Open AI</Link></p>
+    <p><Link to="#features">Case Studies</Link></p>
+    <p><Link to="#blog">Library</Link></p>
   </>
 );
 
@@ -27,18 +26,23 @@ const Navbar = () => {
     <div className="gpt3__navbar">
       <div className="gpt3__navbar-links">
         <div className="gpt3__navbar-links_logo">
-          <img src={logo} alt="logo" />
+          <h1>WeTranslate</h1>
         </div>
         <div className="gpt3__navbar-links_container">
           <Menu />
         </div>
       </div>
       <div className="gpt3__navbar-sign">
-        <p>Login</p>
-        {/* Use Link to navigate to the Sign Up page */}
-        <Link to="/signup">
-          <button type="button">Sign up</button>
-        </Link>
+        <div className="gpt3__navbar-login_button">
+          <Link to="/login">
+            <button type="button">Login</button>
+          </Link>
+        </div>
+        <div className="gpt3__navbar-signin_button">
+          <Link to="/signup">
+            <button type="button" onClick={navigateToSignUp}>Sign up</button>
+          </Link>
+        </div>
       </div>
       <div className="gpt3__navbar-menu">
         {toggleMenu
@@ -46,17 +50,13 @@ const Navbar = () => {
           : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />
         }
         {toggleMenu && (
-          <div className="gpt3__navbar-menu_container scale-up-center">
+          <div className="gpt3__navbar-menu_container">
             <div className="gpt3__navbar-menu_container-links">
               <Menu />
             </div>
             <div className="gpt3__navbar-menu_container-links-sign">
-              <p>Login</p>
-              {/* Use Link to navigate to the Sign Up page */}
               <Link to="/signup">
-                <button type="button" onClick={navigateToSignUp}>
-                  Sign up
-                </button>
+                <button type="button" onClick={navigateToSignUp}>Sign up</button>
               </Link>
             </div>
           </div>

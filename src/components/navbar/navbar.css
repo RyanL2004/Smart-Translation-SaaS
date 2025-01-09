@@ -1,126 +1,183 @@
-.gpt3__navbar {
+:root {
+    --primary-color: #ff4820;
+    --secondary-color: #052d56;
+    --text-color: #ffffff;
+    --hover-color: #ae67fa;
+    --bg-color: #09192e;
+    --gradient-bg: linear-gradient(135deg, #052d56, #09192e, #ae67fa);
+    --font-family: 'Poppins', sans-serif;
+    --transition-duration: 0.3s;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background: var(--gradient-bg);
+    color: var(--text-color);
+  }
+  
+  .gpt3__navbar {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 6rem;
-}
-
-.gpt3__navbar-links {
-    display: flex;
-    align-items: center;
-}
-
-.gpt3__navbar-links_logo {
-    margin-right: 2rem;
-}
-
-.gpt3__navbar-links_logo img {
-    width: 62.56px;
-    height: 16.02px;
-}
-
-.gpt3__navbar-links_container {
-    display: flex;
-    flex-direction: row;
-    flex: 1; /* Use flex property to make this container fill the available space */
-    justify-content: flex-end; /* Align containers to the right */
-    align-items: center;
-}
-
-.gpt3__navbar-sign {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.gpt3__navbar-links_container p,
-.gpt3__navbar-sign p,
-.gpt3__navbar-menu_container p {
-    color: #fff;
-    font-family: var(--font-family) ;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
-    text-transform: capitalize;
-
-    margin: 0 1rem;
-    cursor: pointer;
-}
-.gpt3__navbar-sign .login-button {
-    /* Style specifically for the login button */
-    background: #3366cc; /* Change the color as needed */
-}
-.gpt3__navbar-sign button,
-.gpt3__navbar-menu_container button {
-    padding: 0.5rem 1rem;
-    color: #fff;
-    font-family: var(--font-family) ;
-    font-weight:500;
-    font-size: 18px;
-    line-height: 25px;
-    background: #FF4820;
-    border-radius:5px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-}
-
-.gpt3__navbar-menu {
-    margin-left: 1rem;
-    display: none;
-    position:relative;
-}
-.gpt3__navbar-menu svg {
-    cursor: pointer;
-}
-.gpt3__navbar-menu_container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-
-    text-align: end;
-    background: var(--color-footer);
-    padding: 2rem;
-    position: absolute;
-    top: 40px;
-    right:0;
-    margin-top: 1rem;
-    min-width: 210px;
-    border-radius: 5px;
-    box-shadow: 0 0 5 rgba(0,0,0,0.2);
-}
-
-.gpt3__navbar-menu_container p {
-    margin: 1rem 0;
-}
-
-.gpt3__navbar-menu_container-links-sign {
-    display: none;
-}
-
-
-
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #052d56, #09192e, #ae67fa);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
   
-@media screen and (max-width: 1050px) {
+  .gpt3__navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .gpt3__navbar-links_logo {
+    display: flex;
+    cursor: pointer;
+    text-decoration: wavy;
+    font-weight: 600;
+    font-size: 20px;
+    
+  }
+  
+  .gpt3__navbar-links_container {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .gpt3__navbar-links_container p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color var(--transition-duration) ease-in-out;
+  }
+  
+  .gpt3__navbar-links_container p:hover {
+    color: var(--hover-color);
+  }
+  
+  .gpt3__navbar-sign {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .gpt3__navbar-sign button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all var(--transition-duration) ease-in-out;
+  }
+  
+  .gpt3__navbar-login_button button {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+  }
+  
+  .gpt3__navbar-login_button button:hover {
+    background: var(--hover-color);
+    color: var(--bg-color);
+  }
+  
+  .gpt3__navbar-signin_button button {
+    background: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .gpt3__navbar-signin_button button:hover {
+    background: var(--hover-color);
+  }
+  
+  .gpt3__navbar-menu {
+    display: none;
+  }
+  
+  .gpt3__navbar-menu_container {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 300px;
+    background: var(--bg-color);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .gpt3__navbar-menu_container-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .gpt3__navbar-menu_container-links p {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .gpt3__navbar-menu_container-links p:hover {
+    color: var(--hover-color);
+  }
+  
+  .gpt3__navbar-menu_container-links-sign {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
     .gpt3__navbar-links_container {
-        display: none;
+      display: none;
     }
+  
     .gpt3__navbar-menu {
-        display: flex;
+      display: block;
     }
-}
-
-@media screen and (max-width: 700px) {
+  }
+  
+  @media (max-width: 768px) {
     .gpt3__navbar {
-        padding: 2rem 4rem;
+      padding: 1rem 1.5rem;
     }
-}
-@media screen and (max-width: 550px) {
+  
+    .gpt3__navbar-menu_container {
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 300px) {
     .gpt3__navbar {
-        padding: 2rem;
+      padding: 1rem;
     }
-}
-.gpt3__navbar-menu_container {
-    top: 60px;
-}
+  
+    .gpt3__navbar-menu_container {
+      width: 50px;
+    }
+  }
+  
