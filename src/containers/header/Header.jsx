@@ -1,7 +1,7 @@
 import React from 'react'
 import './header.css'
 import people from '../../assets/people.png'
-import ai from '../../assets/ai.png'
+import newai from '../../assets/newai.png'
 import { Link, useNavigate, navigate } from 'react-router-dom'
 import Signup from '../../components/Signup'
 
@@ -29,7 +29,7 @@ const Header = () => {
         </div>
       </div>
       <div className="gpt3__header-image">
-        <img src={ai} alt="ai" />
+        <img src={newai} alt="ai" />
       </div>
     </div> 
     
